@@ -50,3 +50,5 @@ Console.Clear();
 bool Character1995 = characters.Any(c => c.YearCreated == 1995);
 Console.WriteLine($"Are there characters created in 1995: {Character1995}");
 
+// how many characters were created in 1995
+Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1995)}");
