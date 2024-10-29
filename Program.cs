@@ -197,31 +197,29 @@ Console.Clear();
 //     Console.WriteLine($"{obj.Name}");
 // }
 
-// [1.25a] How many character(s) in the Mario series are Human species?
-int Human = characters.Where(c => c.Species.Contains("Human") && c.Series.Contains("Mario")).Count();
-Console.WriteLine($"How many character(s) in the Mario series are Human species? {Human}");
-
-// [1.25b] List the character(s) in the Mario series that are Human species - return character name only.
-foreach(var obj in characters.Where(c => c.Species.Contains("Human") && c.Series.Contains("Mario"))){
-    Console.WriteLine($"{obj.Name}");
-}
-
-// [1.25c] How many character(s) in the Mario series are Koopa species?
-int Koopa = characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Count();
-Console.WriteLine($"How many character(s) in the Mario series are Koopa species? {Koopa}");
-
-// [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
-foreach(var obj in characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Select(c => new {c.Name})){
-    Console.WriteLine($"{obj.Name}");
-}
-
-// [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
-int NoKoopaOrHuman = characters.Where(c => c.Series.Contains("Mario") && !(c.Species.Contains("Koopa") || c.Species.Contains("Human"))).Count();
-Console.WriteLine($"How many character(s) in the Mario series are something other than Human or Koopa species? {NoKoopaOrHuman}");
-
-// [1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
-foreach(var obj in characters.Where(c => c.Series.Contains("Mario") && !(c.Species.Contains("Koopa") || c.Species.Contains("Human"))).Select(c => new {c.Name})){
-    Console.WriteLine($"{obj.Name}");
+// // [1.25a] How many character(s) in the Mario series are Human species?
+// int Human = characters.Where(c => c.Species.Contains("Human") && c.Series.Contains("Mario")).Count();
+// Console.WriteLine($"How many character(s) in the Mario series are Human species? {Human}");
+// // [1.25b] List the character(s) in the Mario series that are Human species - return character name only.
+// foreach(var obj in characters.Where(c => c.Species.Contains("Human") && c.Series.Contains("Mario"))){
+//     Console.WriteLine($"{obj.Name}");
+// }
+// // [1.25c] How many character(s) in the Mario series are Koopa species?
+// int Koopa = characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Count();
+// Console.WriteLine($"How many character(s) in the Mario series are Koopa species? {Koopa}");
+// // [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
+// foreach(var obj in characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Select(c => new {c.Name})){
+//     Console.WriteLine($"{obj.Name}");
+// }
+// // [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
+// int NoKoopaOrHuman = characters.Where(c => c.Series.Contains("Mario") && !(c.Species.Contains("Koopa") || c.Species.Contains("Human"))).Count();
+// Console.WriteLine($"How many character(s) in the Mario series are something other than Human or Koopa species? {NoKoopaOrHuman}");
+// // [1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
+foreach(var obj in characters.Where(c => c.Series.Contains("Mario") && !(c.Species.Contains("Koopa") || c.Species.Contains("Human"))).Select(c => new {c.Name, c.Species})){
+    Console.WriteLine($"{obj.Name} - {obj.Species}");
 }
 
 // [1.26] List the character(s) in the Donkey Kong series that are something other than Human or Kong species - return character name and species only?
+foreach(var obj in characters.Where(c => c.Series.Contains("Donkey Kong") && !(c.Species.Contains("Kong") || c.Species.Contains("Human"))).Select(c => new {c.Name, c.Species})){
+    Console.WriteLine($"{obj.Name} - {obj.Species}");
+}
