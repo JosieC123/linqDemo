@@ -178,3 +178,7 @@ Console.WriteLine($"Are there any character(s) with no alias (Donkey Kong series
 Console.WriteLine($"How many character(s) with no alias (Donkey Kong series)? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong"))}");
 
 // [1.21i] List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
+foreach(var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Donkey Kong")).Select(c => new {c.Name}))
+{
+    Console.WriteLine($"{obj.Name}");
+}
