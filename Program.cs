@@ -111,31 +111,33 @@ Console.Clear();
 //   }
 // }
 
-//How many character(s) were created in 1981 (all series)?
-Console.WriteLine($"How many characters were created in 1981 (all series)? {characters.Count(c => c.YearCreated == 1981)}");
+// //How many character(s) were created in 1981 (all series)?
+// Console.WriteLine($"How many characters were created in 1981 (all series)? {characters.Count(c => c.YearCreated == 1981)}");
+// //[1.19b] List the character(s) created in that 1981 (all series) - return character name and series only.
+// foreach(var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new { c.Name, c.Series }))
+// {
+//     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Series)}");
+// }
+// //[1.19c] How many character(s) were created in 1981 (Mario series)?
+// int MarioCount = characters.Where(c => c.Series.Contains("Mario")).Count(c => c.YearCreated == 1981);
+// Console.WriteLine($"How many characters were created in 1981 (Mario series)? {MarioCount}");
+// //[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
+// foreach(var obj in characters.Where(c => c.Series.Contains("Mario") && c.YearCreated == 1981).Select(c => new {c.Name}))
+// {
+//     Console.WriteLine($"{obj.Name}");
+// }
+// //[1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
+// int DkCount = characters.Where(c => c.Series.Contains("Donkey Kong")).Count(c => c.YearCreated == 1981);
+// Console.WriteLine($"How many characters were created in 1981 (Donkey Kong series)? {DkCount}");
+// //[1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
+// foreach(var obj in characters.Where(c => c.Series.Contains("Donkey Kong") && c.YearCreated == 1981).Select(c => new {c.Name}))
+// {
+//     Console.WriteLine($"{obj.Name}");
+// }
 
-//[1.19b] List the character(s) created in that 1981 (all series) - return character name and series only.
-foreach(var obj in characters.Where(c => c.YearCreated == 1981).Select(c => new { c.Name, c.Series }))
-{
-    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Series)}");
-}
 
-//[1.19c] How many character(s) were created in 1981 (Mario series)?
-int MarioCount = characters.Where(c => c.Series.Contains("Mario")).Count(c => c.YearCreated == 1981);
-Console.WriteLine($"How many characters were created in 1981 (Mario series)? {MarioCount}");
+//[1.20a] How many character(s) made their first appearance in Donkey Kong 64?
+int DK64Count = characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Count();
+Console.WriteLine($"How many character(s) made their first appearance in Donkey Kong 64? {DK64Count}");
 
-//[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
-foreach(var obj in characters.Where(c => c.Series.Contains("Mario") && c.YearCreated == 1981).Select(c => new {c.Name}))
-{
-    Console.WriteLine($"{obj.Name}");
-}
-
-//[1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
-int DkCount = characters.Where(c => c.Series.Contains("Donkey Kong")).Count(c => c.YearCreated == 1981);
-Console.WriteLine($"How many characters were created in 1981 (Donkey Kong series)? {DkCount}");
-
-//[1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
-foreach(var obj in characters.Where(c => c.Series.Contains("Donkey Kong") && c.YearCreated == 1981).Select(c => new {c.Name}))
-{
-    Console.WriteLine($"{obj.Name}");
-}
+//[1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
