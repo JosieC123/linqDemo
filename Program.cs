@@ -141,3 +141,7 @@ int DK64Count = characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64
 Console.WriteLine($"How many character(s) made their first appearance in Donkey Kong 64? {DK64Count}");
 
 //[1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
+foreach(var obj in characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Select(c => new {c.Name}))
+{
+    Console.WriteLine($"{obj.Name}");
+}
