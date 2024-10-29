@@ -181,16 +181,17 @@ Console.Clear();
 //     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 // }
 
-// [1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
-bool WinterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
-Console.WriteLine($"Do any character(s) have an alias of Snowmad King (return type must be boolean)? {WinterKong}");
-
-// [1.23b] List the character(s) that have an alias of Winter Kong - return character name and alias only.
-foreach(var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new {c.Name, c.Alias})){
-    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
-}
+// // [1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
+// bool WinterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
+// Console.WriteLine($"Do any character(s) have an alias of Winter Kong (return type must be boolean)? {WinterKong}");
+// // [1.23b] List the character(s) that have an alias of Winter Kong - return character name and alias only.
+// foreach(var obj in characters.Where(c => c.Alias.Contains("Winter Kong")).Select(c => new {c.Name, c.Alias})){
+//     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
+// }
 
 // [1.24a] How many character(s) have a species of Kremling?
+int Kremling = characters.Where(c => c.Species.Contains("Kremling")).Count();
+Console.WriteLine($"How many character(s) have a species of Kremling? {Kremling}");
 // [1.24b] List the character(s) that have a species of Kremling - return character name only.
 
 // [1.25a] How many character(s) in the Mario series are Human species?
