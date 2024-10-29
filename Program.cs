@@ -165,6 +165,11 @@ Console.WriteLine($"Are there any character(s) with no alias (Mario series)? {Ma
 Console.WriteLine($"How many character(s) with no alias (Mario series)? {characters.Count(c => c.Alias.Count == 0 && c.Series.Contains("Mario"))}");
 
 // [1.21f] List the character(s) with no alias (Mario series) - return character name and alias only.
+foreach(var obj in characters.Where(c => c.Alias.Count == 0 && c.Series.Contains("Mario")).Select(c => new {c.Name}))
+{
+    Console.WriteLine($"{obj.Name}");
+}
+
 // [1.21g] Are there any character(s) with no alias (Donkey Kong series)?
 // [1.21h] How many character(s) with no alias (Donkey Kong series)?
 // [1.21i] List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
