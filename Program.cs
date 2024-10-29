@@ -145,11 +145,12 @@ Console.Clear();
 // }
 
 // [1.21a] Are there any character(s) with no alias (all series)?
-// are there any characters created in 1995?
 bool CharacterAlias = characters.Any(c => c.Alias.Count == 0);
 Console.WriteLine($"Are there any character(s) with no alias (all series)? {CharacterAlias}");
 
 // [1.21b] How many character(s) with no alias (all series)?
+Console.WriteLine($"How many character(s) with no alias (all series)? {characters.Count(c => c.Alias.Count == 0)}");
+
 // [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
 // [1.21d] Are there any character(s) with no alias (Mario series)?
 // [1.21e] How many character(s) with no alias (Mario series)?
