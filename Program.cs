@@ -135,13 +135,25 @@ Console.Clear();
 //     Console.WriteLine($"{obj.Name}");
 // }
 
+// //[1.20a] How many character(s) made their first appearance in Donkey Kong 64?
+// int DK64Count = characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Count();
+// Console.WriteLine($"How many character(s) made their first appearance in Donkey Kong 64? {DK64Count}");
+// //[1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
+// foreach(var obj in characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Select(c => new {c.Name}))
+// {
+//     Console.WriteLine($"{obj.Name}");
+// }
 
-//[1.20a] How many character(s) made their first appearance in Donkey Kong 64?
-int DK64Count = characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Count();
-Console.WriteLine($"How many character(s) made their first appearance in Donkey Kong 64? {DK64Count}");
+// [1.21a] Are there any character(s) with no alias (all series)?
+// are there any characters created in 1995?
+bool CharacterAlias = characters.Any(c => c.Alias.Count == 0);
+Console.WriteLine($"Are there any character(s) with no alias (all series)? {CharacterAlias}");
 
-//[1.20b] List the character(s) that made their first appearance in Donkey Kong 64 - return character name only.
-foreach(var obj in characters.Where(c => c.FirstAppearance.Contains("Donkey Kong 64")).Select(c => new {c.Name}))
-{
-    Console.WriteLine($"{obj.Name}");
-}
+// [1.21b] How many character(s) with no alias (all series)?
+// [1.21c] List the character(s) with no alias (all series) - return character name, alias and series only.
+// [1.21d] Are there any character(s) with no alias (Mario series)?
+// [1.21e] How many character(s) with no alias (Mario series)?
+// [1.21f] List the character(s) with no alias (Mario series) - return character name and alias only.
+// [1.21g] Are there any character(s) with no alias (Donkey Kong series)?
+// [1.21h] How many character(s) with no alias (Donkey Kong series)?
+// [1.21i] List the character(s) with no alias (Donkey Kong series) - return character name and alias only.
