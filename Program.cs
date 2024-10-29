@@ -189,15 +189,18 @@ Console.Clear();
 //     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
 // }
 
-// [1.24a] How many character(s) have a species of Kremling?
-int Kremling = characters.Where(c => c.Species.Contains("Kremling")).Count();
-Console.WriteLine($"How many character(s) have a species of Kremling? {Kremling}");
-// [1.24b] List the character(s) that have a species of Kremling - return character name only.
-foreach(var obj in characters.Where(c => c.Species.Contains("Kremling")).Select(c => new {c.Name})){
-    Console.WriteLine($"{obj.Name}");
-}
+// // [1.24a] How many character(s) have a species of Kremling?
+// int Kremling = characters.Where(c => c.Species.Contains("Kremling")).Count();
+// Console.WriteLine($"How many character(s) have a species of Kremling? {Kremling}");
+// // [1.24b] List the character(s) that have a species of Kremling - return character name only.
+// foreach(var obj in characters.Where(c => c.Species.Contains("Kremling")).Select(c => new {c.Name})){
+//     Console.WriteLine($"{obj.Name}");
+// }
 
 // [1.25a] How many character(s) in the Mario series are Human species?
+int Human = characters.Where(c => c.Species.Contains("Human") && c.Series.Contains("Mario")).Count();
+Console.WriteLine($"How many character(s) in the Mario series are Human species? {Human}");
+
 // [1.25b] List the character(s) in the Mario series that are Human species - return character name only.
 // [1.25c] How many character(s) in the Mario series are Koopa species?
 // [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
