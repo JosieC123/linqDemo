@@ -210,13 +210,15 @@ foreach(var obj in characters.Where(c => c.Species.Contains("Human") && c.Series
 int Koopa = characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Count();
 Console.WriteLine($"How many character(s) in the Mario series are Koopa species? {Koopa}");
 
-
 // [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
 foreach(var obj in characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Select(c => new {c.Name})){
     Console.WriteLine($"{obj.Name}");
 }
 
 // [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
+int NoKoopaOrHuman = characters.Where(c => c.Series.Contains("Mario") && !(c.Species.Contains("Koopa") || c.Species.Contains("Human"))).Count();
+Console.WriteLine($"How many character(s) in the Mario series are something other than Human or Koopa species? {NoKoopaOrHuman}");
+
 // [1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
 
 // [1.26] List the character(s) in the Donkey Kong series that are something other than Human or Kong species - return character name and species only?
