@@ -193,6 +193,9 @@ Console.Clear();
 int Kremling = characters.Where(c => c.Species.Contains("Kremling")).Count();
 Console.WriteLine($"How many character(s) have a species of Kremling? {Kremling}");
 // [1.24b] List the character(s) that have a species of Kremling - return character name only.
+foreach(var obj in characters.Where(c => c.Species.Contains("Kremling")).Select(c => new {c.Name})){
+    Console.WriteLine($"{obj.Name}");
+}
 
 // [1.25a] How many character(s) in the Mario series are Human species?
 // [1.25b] List the character(s) in the Mario series that are Human species - return character name only.
