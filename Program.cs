@@ -131,4 +131,7 @@ foreach(var obj in characters.Where(c => c.Series.Contains("Mario") && c.YearCre
 }
 
 //[1.19e] How many character(s) were created in 1981 (Donkey Kong series)?
+int DkCount = characters.Where(c => c.Series.Contains("Donkey Kong")).Count(c => c.YearCreated == 1981);
+Console.WriteLine($"How many characters were created in 1981 (Donkey Kong series)? {DkCount}");
+
 //[1.19f] List the character(s) created in that 1981 (Donkey Kong series) - return character name only.
