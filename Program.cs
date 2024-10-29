@@ -173,16 +173,18 @@ Console.Clear();
 //     Console.WriteLine($"{obj.Name}");
 // }
 
-// [1.22a] Do any character(s) have an alias of Snowmad King (return type must be boolean)?
-bool SnowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
-Console.WriteLine($"Do any character(s) have an alias of Snowmad King (return type must be boolean)? {SnowmadKing}");
-
-// [1.22b] List the character(s) that have an alias of Snowmad King - return character name and alias only.
-foreach(var obj in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new {c.Name, c.Alias})){
-    Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
-}
+// // [1.22a] Do any character(s) have an alias of Snowmad King (return type must be boolean)?
+// bool SnowmadKing = characters.Any(c => c.Alias.Contains("Snowmad King"));
+// Console.WriteLine($"Do any character(s) have an alias of Snowmad King (return type must be boolean)? {SnowmadKing}");
+// // [1.22b] List the character(s) that have an alias of Snowmad King - return character name and alias only.
+// foreach(var obj in characters.Where(c => c.Alias.Contains("Snowmad King")).Select(c => new {c.Name, c.Alias})){
+//     Console.WriteLine($"{obj.Name} - {String.Join(", ", obj.Alias)}");
+// }
 
 // [1.23a] Do any character(s) that have an alias of Winter Kong (return type must be boolean)?
+bool WinterKong = characters.Any(c => c.Alias.Contains("Winter Kong"));
+Console.WriteLine($"Do any character(s) have an alias of Snowmad King (return type must be boolean)? {WinterKong}");
+
 // [1.23b] List the character(s) that have an alias of Winter Kong - return character name and alias only.
 
 // [1.24a] How many character(s) have a species of Kremling?
