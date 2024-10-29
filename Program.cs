@@ -212,6 +212,10 @@ Console.WriteLine($"How many character(s) in the Mario series are Koopa species?
 
 
 // [1.25d] List the character(s) in the Mario series that are Koopa species - return character name only.
+foreach(var obj in characters.Where(c => c.Species.Contains("Koopa") && c.Series.Contains("Mario")).Select(c => new {c.Name})){
+    Console.WriteLine($"{obj.Name}");
+}
+
 // [1.25e] How many character(s) in the Mario series are something other than Human or Koopa species?
 // [1.25f] List the character(s) in the Mario series that are something other than Human or Koopa species - return character name and species only.
 
